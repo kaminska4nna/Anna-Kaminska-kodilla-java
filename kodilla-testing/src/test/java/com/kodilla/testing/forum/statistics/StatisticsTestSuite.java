@@ -22,7 +22,7 @@ public class StatisticsTestSuite {
 
         when(statisticsMock.postsCount()).thenReturn(postsAmount);
         when(statisticsMock.usersNames()).thenReturn(usersList);
-        StatisticsMethods statisticsMethodsTest = new StatisticsMethods(statisticsMock);
+        StatisticsImplementation statisticsMethodsTest = new StatisticsImplementation(statisticsMock);
 
         //When
         double averageAmountOfPostsPerUserTest = statisticsMethodsTest.averagePostPerUser();
@@ -42,7 +42,7 @@ public class StatisticsTestSuite {
 
         when(statisticsMock.postsCount()).thenReturn(postsAmount);
         when(statisticsMock.usersNames()).thenReturn(usersList);
-        StatisticsMethods statisticsMethodsTest = new StatisticsMethods(statisticsMock);
+        StatisticsImplementation statisticsMethodsTest = new StatisticsImplementation(statisticsMock);
         //When
         double averageAmountOfPostsPerUserTest = statisticsMethodsTest.averagePostPerUser();
 
@@ -59,7 +59,7 @@ public class StatisticsTestSuite {
 
         when(statisticsMock.postsCount()).thenReturn(postsAmount);
         when(statisticsMock.usersNames()).thenReturn(usersList);
-        StatisticsMethods statisticsMethodsTest = new StatisticsMethods(statisticsMock);
+        StatisticsImplementation statisticsMethodsTest = new StatisticsImplementation(statisticsMock);
         //When
         double averageAmountOfPostsPerUserTest = statisticsMethodsTest.averagePostPerUser();
 
@@ -79,7 +79,7 @@ public class StatisticsTestSuite {
 
         when(statisticsMock.postsCount()).thenReturn(comments);
         when(statisticsMock.usersNames()).thenReturn(usersList);
-        StatisticsMethods statisticsMethodsTest = new StatisticsMethods(statisticsMock);
+        StatisticsImplementation statisticsMethodsTest = new StatisticsImplementation(statisticsMock);
 
         //When
         double averageCommentPerUserTest = statisticsMethodsTest.averageCommentPerUser();
@@ -97,7 +97,7 @@ public class StatisticsTestSuite {
 
         when(statisticsMock.commentsCount()).thenReturn(comments);
         when(statisticsMock.postsCount()).thenReturn(posts);
-        StatisticsMethods statisticsMethodsTest = new StatisticsMethods(statisticsMock);
+        StatisticsImplementation statisticsMethodsTest = new StatisticsImplementation(statisticsMock);
 
         //When
         double averageCommentPerPostTest = statisticsMethodsTest.averageCommentPerPost();
@@ -115,7 +115,7 @@ public class StatisticsTestSuite {
 
         when(statisticsMock.commentsCount()).thenReturn(comments);
         when(statisticsMock.postsCount()).thenReturn(posts);
-        StatisticsMethods statisticsMethodsTest = new StatisticsMethods(statisticsMock);
+        StatisticsImplementation statisticsMethodsTest = new StatisticsImplementation(statisticsMock);
 
         //When
         double averageCommentPerPostTest = statisticsMethodsTest.averageCommentPerPost();

@@ -3,12 +3,12 @@ package com.kodilla.testing.forum.statistics;
 import java.util.HashMap;
 import java.util.Map;
 
-public class StatisticsMethods {
+public class StatisticsImplementation {
     private Statistics statistics;
     public Map<String, Double> statisticsList = new HashMap<>();
 
 
-    public StatisticsMethods(Statistics statistics) {
+    public StatisticsImplementation(Statistics statistics) {
         this.statistics = statistics;
     }
 
