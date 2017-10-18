@@ -36,7 +36,7 @@ public class ShapeCollectorTestSuite {
 
 
     @Test
-    public void testRemoveFigureNotExisting() {
+    public void testRemoveFigureIfNotExisting() {
 
         boolean result = shapeCollector.removeFigure(triangle1);
         Assert.assertFalse(result);
