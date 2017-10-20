@@ -35,13 +35,6 @@ public class ShapeCollectorTestSuite {
     }
 
 
-    @Test
-    public void testRemoveFigureIfNotExisting() {
-
-        boolean result = shapeCollector.removeFigure(triangle1);
-        Assert.assertFalse(result);
-    }
-
 
     @Test
     public void testRemoveFigure() {
@@ -52,4 +45,20 @@ public class ShapeCollectorTestSuite {
         Assert.assertTrue(result);
         Assert.assertEquals(0, shapeCollector.getFigureNumbers());
     }
+
+    @Test
+    public void testShowFigures() {
+
+        Square square1 = new Square(2.0f, "square1");
+        shapeCollector.addFigure(triangle1);
+        shapeCollector.addFigure(square1);
+
+        ShapeCollector result = new ShapeCollector();
+        result.addFigure(triangle1);
+        shapeCollector.addFigure(square1);
+
+        Assert.assertEquals(result, shapeCollector);
+
+    }
+
 }

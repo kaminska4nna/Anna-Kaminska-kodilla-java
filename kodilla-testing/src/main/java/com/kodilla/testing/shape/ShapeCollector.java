@@ -25,24 +25,18 @@ public class ShapeCollector {
     }
 
     public Shape getFigure(int index) {
-        Shape shape = null;
-        if (index >= 0 && index < figureList.size()) {
-            shape = figureList.get(index);
-        }
+        shape = figureList.get(index);
         return shape;
-    }
-
-    public void showFigures() {
-        for (Shape list : figureList) {
-            System.out.println(list);
-        }
     }
 
     public int getFigureNumbers() {
         return figureList.size();
     }
 
-    public ArrayList<Shape> getFigureList() {
-        return figureList;
+
+    public void showFigures() {
+        for (Shape list : figureList) {
+            System.out.println(list);
+        }
     }
 }
