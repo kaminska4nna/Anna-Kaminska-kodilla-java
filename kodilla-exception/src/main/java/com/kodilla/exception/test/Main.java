@@ -10,7 +10,7 @@ public class Main {
         airports.put("Okęcie", false);
 
 
-        FlightFinder search = new FlightFinder(airports);
+        FlightSearch search = new FlightSearch(airports);
         Flight myFlight = new Flight("Luton", "Okęcie");
 
         try {
