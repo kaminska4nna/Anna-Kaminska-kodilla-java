@@ -7,7 +7,7 @@ public class FlightSearch {
     public FlightSearch(HashMap<String, Boolean> airports) {
     }
 
-    public void findFlight(Flight flight) throws RouteNotFoundException {
+    public boolean findFlight(Flight flight) throws RouteNotFoundException {
 
         Map<String, Boolean> airports = new HashMap<>();
 
@@ -15,21 +15,12 @@ public class FlightSearch {
         airports.put("Okęcie", true);
         airports.put("Luton", false);
 
-        for (Map.Entry<String, Boolean> entry : airports.entrySet()) {
 
-            if (!airports.containsKey(flight.getArrivalAirport())) {
+        Boolean flightIsPossible = airports.get(flight.getArrivalAirport());
+
+        if (flightIsPossible != true) {
                 throw new RouteNotFoundException();
-            }
+            } else return flightIsPossible;
 
-            if (!airports.containsKey(flight.getDepartureAirport())) {
-                throw new RouteNotFoundException();
-            }
-
-            if (entry.getKey() == flight.getArrivalAirport() && entry.getValue()) {
-                System.out.println("Flight to " + flight.getArrivalAirport() + " has been found");
-            } else {
-                System.out.println("Flight to " + flight.getArrivalAirport() + " has not been found");
-            }
         }
     }
-}
