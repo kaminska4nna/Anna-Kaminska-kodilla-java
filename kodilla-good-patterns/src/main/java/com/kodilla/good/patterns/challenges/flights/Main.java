@@ -1,12 +1,12 @@
 package com.kodilla.good.patterns.challenges.flights;
 
 public class Main {
-
     public static void main(String[] args) {
 
-        FlightFinder flightFinder = new FlightFinder();
+        ConnectedFlightSearcher connectedFlightSearcher = new ConnectedFlightSearcher();
 
+        connectedFlightSearcher.searchByStartPoint("Warszawa");
+        connectedFlightSearcher.searchByEndPoint("Warszawa");
 
-        flightFinder.searchFlightsFrom("Warsaw");
     }
 }
