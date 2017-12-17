@@ -3,10 +3,11 @@ package com.kodilla.good.patterns.challenges.flights;
 public class Main {
     public static void main(String[] args) {
 
-        ConnectedFlightSearcher connectedFlightSearcher = new ConnectedFlightSearcher();
+        FlightSearcher flightSearcher = new FlightSearcher();
 
-        connectedFlightSearcher.searchByStartPoint("Warszawa");
-        connectedFlightSearcher.searchByEndPoint("Warszawa");
+        flightSearcher.searchByStartPoint("Warszawa");
+        flightSearcher.searchByEndPoint("Warszawa");
+        flightSearcher.searchByConnectionPoint("Gdańsk");
 
     }
 }

@@ -3,10 +3,10 @@ package com.kodilla.good.patterns.challenges.flights;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ConnectedFlightsTable {
+public class FlightsTable {
     private final List<ConnectedFlight> connectedFlights = new ArrayList<>();
 
-    public ConnectedFlightsTable() {
+    public FlightsTable() {
         connectedFlights.add(new ConnectedFlight("Warszawa", "Londyn", "Berlin"));
         connectedFlights.add(new ConnectedFlight("Warszawa", "Wiedeń", "Wrocław"));
         connectedFlights.add(new ConnectedFlight("Warszawa", "Szczecin", "Gdańsk"));

@@ -3,11 +3,11 @@ package com.kodilla.good.patterns.challenges.flights;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class ConnectedFlightSearcher {
-    private final ConnectedFlightsTable connectedFlightsTable = new ConnectedFlightsTable();
+public class FlightSearcher {
+    private final FlightsTable flightsTable = new FlightsTable();
 
     public List<ConnectedFlight> searchByStartPoint(String startPoint) {
-        List<ConnectedFlight> connectedFlight = connectedFlightsTable.getList().stream()
+        List<ConnectedFlight> connectedFlight = flightsTable.getList().stream()
                 .filter(flights -> flights.getStartPoint().equals(startPoint))
                 .collect(Collectors.toList());
         System.out.println("Searching connected flights by Startpoint...");
@@ -17,7 +17,7 @@ public class ConnectedFlightSearcher {
     }
 
     public List<ConnectedFlight> searchByEndPoint(String endPoint) {
-        List<ConnectedFlight> connectedFlight = connectedFlightsTable.getList().stream()
+        List<ConnectedFlight> connectedFlight = flightsTable.getList().stream()
                 .filter(flights -> flights.getEndPoint() == endPoint)
                 .collect(Collectors.toList());
         System.out.println("Searching connected flights by Endpoint...");
@@ -26,4 +26,13 @@ public class ConnectedFlightSearcher {
         return connectedFlight;
     }
 
+    public List<ConnectedFlight> searchByConnectionPoint(String connectionPoint) {
+        List<ConnectedFlight> connectedFlight = flightsTable.getList().stream()
+                .filter(flights -> flights.getConnectPoint() == connectionPoint)
+                .collect(Collectors.toList());
+        System.out.println("Searching connected flights by connection Point...");
+        connectedFlight.stream()
+                .forEach(System.out::println);
+        return connectedFlight;
+    }
 }
