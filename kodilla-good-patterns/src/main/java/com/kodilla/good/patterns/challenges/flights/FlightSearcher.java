@@ -25,7 +25,6 @@ public class FlightSearcher {
                 .forEach(System.out::println);
         return connectedFlight;
     }
-
     public List<ConnectedFlight> searchByConnectionPoint(String connectionPoint) {
         List<ConnectedFlight> connectedFlight = flightsTable.getList().stream()
                 .filter(flights -> flights.getConnectPoint() == connectionPoint)

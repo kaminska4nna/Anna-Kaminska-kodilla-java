@@ -1,11 +1,11 @@
 package com.kodilla.good.patterns.challenges.flights;
 
-public class ConnectedFlight {
+public class Flight {
     private final String startPoint;
     private final String endPoint;
     private final String connectPoint;
 
-    public ConnectedFlight(String startPoint, String endPoint, String connectPoint) {
+    public Flight(String startPoint, String endPoint, String connectPoint) {
         this.startPoint = startPoint;
         this.endPoint = endPoint;
         this.connectPoint = connectPoint;
@@ -28,7 +28,7 @@ public class ConnectedFlight {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        ConnectedFlight that = (ConnectedFlight) o;
+        Flight that = (Flight) o;
 
         if (!startPoint.equals(that.startPoint)) return false;
         if (!endPoint.equals(that.endPoint)) return false;

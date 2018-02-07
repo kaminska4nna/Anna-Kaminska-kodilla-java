@@ -10,8 +10,8 @@ import java.util.List;
 public interface EmployeeDao extends CrudRepository<Employee, Integer> {
 
     @Query
-    List<Employee> findEmployeeByLastName(@Param("LASTNAME") String lastName);
+    List<Employee> searchEmployeeByLastName(@Param("SEARCHKEY") String searchKey);
 
     @Query
-    List<Employee> findEmployeeByChars(@Param("CHARACTERS") String characters);
+    List<Employee> employeeQuery(@Param("LASTNAME") String lastName);
 }
