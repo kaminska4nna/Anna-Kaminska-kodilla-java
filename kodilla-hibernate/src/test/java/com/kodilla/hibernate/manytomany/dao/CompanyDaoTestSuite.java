@@ -81,7 +81,7 @@ public class CompanyDaoTestSuite {
         int lindaKovalskyId = lindaKovalsky.getId();
 
         String lastName = "Smith";
-        List<Employee> employees = employeeDao.findEmployeeByLastName(lastName);
+        List<Employee> employees = employeeDao.searchEmployeeByLastName(lastName);
 
         //Then
         Assert.assertEquals(1, employees.size());
@@ -112,7 +112,7 @@ public class CompanyDaoTestSuite {
         int greyMatterId = greyMatter.getId();
 
         String characters = "mat";
-        List<Company> companies = companyDao.findByThreeChars(characters);
+        List<Company> companies = companyDao.retrieveCompaniesWhichNamesBeginWith(characters);
 
         //Then
         Assert.assertEquals(0, companies.size());

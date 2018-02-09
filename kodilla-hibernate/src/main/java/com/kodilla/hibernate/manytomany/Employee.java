@@ -7,29 +7,27 @@ import java.util.List;
 
 @NamedQueries({
         @NamedQuery(
-                name = "Employee.findEmployeeByLastName",
-                query = "FROM Employee WHERE lastname = :LASTNAME"
-        ),
+                name = "Employee.searchEmployeeByLastName",
+                query = "FROM Employee WHERE lastName LIKE CONCAT(:SEARCHKEY, '%')"),
         @NamedQuery(
-                name = "Employee.findEmployeeByChars",
-                query = "FROM Employee WHERE firstname LIKE :CHARACTERS OR lastname LIKE :CHARACTERS"
-        )
+                name = "Employee.employeeQuery",
+                query = "FROM Employee WHERE lastName = :LASTNAME")
 })
 
 @Entity
 @Table(name = "EMPLOYEES")
 public class Employee {
     private int id;
-    private String firstname;
-    private String lastname;
+    private String firstName;
+    private String lastName;
     private List<Company> companies = new ArrayList<>();
 
     public Employee() {
     }
 
-    public Employee(String firstname, String lastname) {
-        this.firstname = firstname;
-        this.lastname = lastname;
+    public Employee(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
 
     @Id
@@ -42,38 +40,39 @@ public class Employee {
 
     @NotNull
     @Column(name = "FIRSTNAME")
-    public String getFirstname() {
-        return firstname;
+    public String getFirstName() {
+        return firstName;
     }
 
     @NotNull
     @Column(name = "LASTNAME")
-    public String getLastname() {
-        return lastname;
+    public String getLastName() {
+        return lastName;
+    }
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "JOIN_COMPANY_EMPLOYEE",
+            joinColumns = {@JoinColumn(name = "EMPLOYEE_ID", referencedColumnName = "EMPLOYEE_ID")},
+            inverseJoinColumns = {@JoinColumn(name = "COMPANY_ID", referencedColumnName = "COMPANY_ID")}
+    )
+    public List<Company> getCompanies() {
+        return companies;
     }
 
     private void setId(int id) {
         this.id = id;
     }
 
-    private void setFirstname(String firstname) {
-        this.firstname = firstname;
+    private void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    private void setLastname(String lastname) {
-        this.lastname = lastname;
-    }
-
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "JOIN_COMPANY_EMPLOYEE",
-            joinColumns = {@JoinColumn(name = "EMPLOYEE_ID", referencedColumnName = "EMPLOYEE_ID")},
-            inverseJoinColumns = {@JoinColumn(name = "COMPANY_ID", referencedColumnName = "COMPANY_ID")})
-    public List<Company> getCompanies() {
-        return companies;
+    private void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public void setCompanies(List<Company> companies) {
         this.companies = companies;
     }
 }
-

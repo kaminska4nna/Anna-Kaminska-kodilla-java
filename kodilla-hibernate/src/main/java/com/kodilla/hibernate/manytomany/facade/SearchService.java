@@ -16,12 +16,11 @@ public class SearchService {
     private static final Logger LOGGER = LoggerFactory.getLogger(SearchService.class);
 
     @Autowired
+    private EmployeeDao employeeDao;
+    @Autowired
     private CompanyDao companyDao;
 
-    @Autowired
-    private EmployeeDao employeeDao;
-
-    public List<Company> searchCompany(final String searchKey) throws SearchServiceException {
+    public List<Company> searchCompaniesByName(final String searchKey) throws SearchServiceException {
         List<Company> companySearchResult = companyDao.searchCompanyByName(searchKey);
         if (companySearchResult.size() == 0) {
             LOGGER.info(SearchServiceException.ERR_COMPANY_NOT_FOUND);
